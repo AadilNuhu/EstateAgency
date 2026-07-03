@@ -1,4 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@theme {
+  --color-background: #ffffff;
+  --color-default: #444444;
+  --color-heading: #1b1b1b;
+  --color-accent: #2eca6a;
+  --color-surface: #ffffff;
+  --color-contrast: #ffffff;
+
+  --color-nav: #444444;
+  --color-nav-hover: #000000;
+  --color-nav-mobile-background: #ffffff;
+  --color-nav-dropdown-background: #ffffff;
+
+  --color-nav-dropdown: #444444;
+  --color-nav-dropdown-hover: #2eca6a;
+}
+
+/* .light-background {
+  --color-background: #f9f9f9;
+  --color-surface: #ffffff;
+}
+
+.dark-background {
+  --color-background: #060606;
+  --color-default: #ffffff;
+  --color-heading: #ffffff;
+  --color-surface: #252525;
+  --color-contrast: #ffffff;
+} */
+:root {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --default-font:
+    'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --heading-font: 'Raleway', sans-serif;
+  --nav-font: 'Poppins', sans-serif;
+}
+
+body {
+  color: var(--color-default);
+  background-color: var(--color-background);
+  font-family: var(--default-font);
+}
+
+/* a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+} */
+
+/* a:hover {
+  color: color-mix(in srgb, var(--color-accent), transparent 25%);
+  text-decoration: none;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* color: var(--color-heading); */
+  font-family: var(--heading-font);
+}
