@@ -1,0 +1,80 @@
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="mx-auto max-w-7xl px-4">
+        <div class="flex h-18 items-center justify-between">
+
+            <!-- Logo -->
+            <a routerLink="/" class="text-2xl font-bold">
+                Estate<span class="text-green-500">Agency</span>
+            </a>
+
+            <!-- Desktop view -->
+            <nav class="hidden lg:flex items-center gap-8">
+
+                <a routerLink="/" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    Home
+                </a>
+
+                <a routerLink="/about" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    About
+                </a>
+
+                <a routerLink="/services" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    Services
+                </a>
+
+                <a routerLink="/properties" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    Properties
+                </a>
+
+                <a routerLink="/agents" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    Agents
+                </a>
+
+                <a routerLink="/contact" routerLinkActive="text-green-500 border-green-500"
+                    class="border-b-2 border-transparent pb-1 font-medium transition-all duration-300 hover:border-green-500">
+                    Contact
+                </a>
+            </nav>
+            <!-- Mobile Hamburger -->
+            <button (click)="isMenuOpen = !isMenuOpen" class="lg:hidden text-3xl">
+                <i class="bi" [ngClass]="isMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div *ngIf="isMenuOpen" class="lg:hidden pb-5">
+
+            <nav class="flex flex-col gap-1">
+
+                <a routerLink="/" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    Home
+                </a>
+
+                <a routerLink="/about" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    About
+                </a>
+
+                <a routerLink="/services" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    Services
+                </a>
+
+                <a routerLink="/properties" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    Properties
+                </a>
+
+                <a routerLink="/agents" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    Agents
+                </a>
+
+                <a routerLink="/contact" (click)="isMenuOpen=false" class="rounded-lg px-4 py-3 hover:bg-gray-100">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </div>
+</header>
