@@ -1,52 +1,143 @@
 <div>
     <app-navbar></app-navbar>
-    <!-- Hero Section -->
+
     <section class="relative h-screen overflow-hidden">
 
-        <div class="overflow-hidden w-full h-screen">
-            <div class="flex w-full transition-transform duration-700 ease-in h-full"
-                [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
-                @for(img of carouselImages; track img){
-                <img [src]="img" alt="" class="min-w-full h-screen object-cover">
-                }
+
+        <!-- Carousel -->
+        <div class="flex h-full transition-transform duration-700 ease-in-out"
+            [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+
+            @for (item of carouselItems; track $index) {
+
+            <div class="relative min-w-full h-screen">
+
+                <!-- Background Image -->
+                <img [src]="item.image" alt="{{ item.streetNumber + ' ' + item.streetName }}"
+                    title="{{ item.streetNumber + ' ' + item.streetName }}"
+                    class="absolute inset-0 w-full h-full object-cover object-center">
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+
+                    <div class="px-15">
+
+                        <p class="text-white mb-5 text-lg">
+                            Doral, Florida
+                        </p>
+
+                        <h2 class="text-surface uppercase font-black text-[26px] md:text-6xl mb-15 md:mb-10">
+
+                            <span class="text-accent">
+                                {{ item.streetNumber }}
+                            </span>
+
+                            {{ item.streetName }}
+
+                        </h2>
+
+                        <a routerLink="/"
+                            class="inline-block border-2 border-accent rounded-full px-10 py-3 text-xl uppercase text-white transition-all duration-300 hover:bg-accent/70 hover:border-accent">
+
+                            {{ item.amount }}
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
-
-        <div
-            class="absolute w-screen h-screen bg-black/40 top-0 left-0 right-0 z-50 flex  items-center justify-center flex-col">
-            <button (click)="next()" class="text-surface border-0  absolute left-4 cursor-pointer">
-                <i class="bi bi-chevron-left text-surface text-2xl "></i>
-            </button>
-            <div>
-                <p class="text-white mb-5">Doral, Florida</p>
-                <h2 class="text-[32px] md:text-[56px] font-extrabold md:font-black text-surface uppercase mb-10"><span
-                        class="text-accent">204</span>
-                    Olive
-                    Road Two</h2>
-                <a routerLink="/"
-                    class="border-2 text-2xl uppercase text-surface font-bold border-accent px-8 py-3 rounded-full">rent
-                    | $
-                    12.000</a>
-
-            </div>
-            <button (click)="prev()" class="text-surface border-0 absolute right-4 cursor-pointer">
-                <i class="bi bi-chevron-right text-surface text-2xl "></i>
-            </button>
-
-        </div>
-        <div class="flex  space-x-1 absolute bottom-10 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
-            @for(img of carouselImages; track img){
-            <div (click)="change($index)" class="h-1.5  cursor-pointer bg-gray-400"
-                [class.bg-green-400]="currentIndex === $index" [class.bg-white]="currentIndex !== $index"
-                [class.w-10]="currentIndex === $index" [class.w-6]="currentIndex !== $index">
-            </div>
             }
+
         </div>
+
+        <!-- Previous -->
+        <button type="button" (click)="prev()" aria-label="Previous slide"
+            class="absolute left-5 top-1/2 -translate-y-1/2 z-50 text-white hover:text-accent transition">
+
+            <i class="bi bi-chevron-left text-4xl"></i>
+
+        </button>
+
+        <!-- Next -->
+        <button type="button" (click)="next()" aria-label="Next slide"
+            class="absolute right-5 top-1/2 -translate-y-1/2 z-50 text-white hover:text-accent transition">
+
+            <i class="bi bi-chevron-right text-4xl"></i>
+
+        </button>
+
+        <!-- Indicators -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-2">
+
+            @for (item of carouselItems; track $index) {
+
+            <button type="button" (click)="change($index)" [attr.aria-label]="'Go to slide ' + ($index + 1)"
+                class="h-1.5 rounded-full transition-all duration-300" [class.bg-accent]="currentIndex === $index"
+                [class.w-10]="currentIndex === $index" [class.bg-white]="currentIndex !== $index"
+                [class.w-6]="currentIndex !== $index">
+
+            </button>
+
+            }
+
+        </div>
+
 
 
 
     </section>
+
+    <!-- Our Services Section-->
+    <section class="my-15 px-4 md:px-20 w-full">
+        <h2 class="text-center font-bold text-3xl mb-4">Our Services</h2>
+        <p class="text-center">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-15 w-full">
+            @for(item of serviceCardItems; track item.title){
+            <a routerLink="/"
+                class="bg-white rounded-2xl shadow-md px-5 py-10 cursor-pointer transition-all duration-500 hover:-translate-y-1.25">
+
+                <div class="bg-accent rounded-full h-15 w-15 flex items-center justify-center">
+                    <i class="text-surface text-2xl" [class]="item.icon"></i>
+                </div>
+                <h3 class="text-[18px] mt-4 font-bold mb-5">{{item.title}}</h3>
+                <p class="text-sm text-default/80 ">{{item.text }}</p>
+
+            </a>
+            }
+
+        </div>
+    </section>
+    <!-- Our Gent Section-->
+    <section class="my-20 px-4 md:px-20 w-full">
+        <h2 class="text-center font-bold text-3xl mb-4">Our Agents</h2>
+        <p class="text-center">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-15">
+            @for(item of agents; track item.name){
+            <div class="bg-white rounded-2xl shadow-md transition-all duration-500 hover:-translate-y-1.25 relative">
+
+                <img [src]="item.imgUrl" alt="">
+                <div class="absolute -bottom-10 bg-white w-[80%] left-8.5 p-3">
+                    <h4 class="text-[18px]  font-bold border-b border-gray-200 w-fit mb-2">{{item.name}}</h4>
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-default/80 italic ">{{item.role }}</p>
+                        <div class="flex space-x-1">
+                            <a routerLink=""><i class="bi bi-twitter-x text-sm text-gray-400"></i></a>
+                            <a routerLink=""><i class="bi bi-facebook text-sm text-gray-400"></i></a>
+                            <a routerLink=""><i class="bi bi-instagram text-sm text-gray-400"></i></a>
+                            <a routerLink=""><i class="bi bi-linkedin text-sm text-gray-400"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            }
+
+        </div>
+    </section>
+
+    <app-footer></app-footer>
 
 </div>
