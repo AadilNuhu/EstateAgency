@@ -59,3 +59,33 @@ h6 {
   /* color: var(--color-heading); */
   font-family: var(--heading-font);
 }
+.nav a.active {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-heading);
+}
+@media (max-width: 768px) {
+  .nav a.active {
+    color: var(--color-accent) !important;
+  }
+}
+
+.features-card {
+  transition: all 0.5s ease;
+  &.features-card:hover {
+    .icon-box {
+      background-color: var(--color-accent);
+      .bi {
+        color: #fff;
+      }
+    }
+    h2 {
+      color: var(--color-accent);
+    }
+  }
+}
+.jump-to-top.show {
+  display: flex;
+}
+.jump-to-top.hide {
+  display: none;
+}
