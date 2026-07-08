@@ -1,10 +1,11 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
+import { Footer } from "./components/footer/footer";
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, RouterOutlet, RouterLinkWithHref],
+  imports: [Navbar, RouterOutlet, RouterLinkWithHref, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
