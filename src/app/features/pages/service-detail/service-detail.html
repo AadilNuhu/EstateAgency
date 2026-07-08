@@ -1,0 +1,76 @@
+<div class="mt-40 mb-15">
+    <div class="flex flex-col items-center mb-15">
+        <h1 class="text-[40px] font-bold">Service Detail</h1>
+        <p class="px-7 w-full lg:w-180 text-center ">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis
+            quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
+            ratione sint. Sit quaerat ipsum dolorem.</p>
+    </div>
+
+    <div class="mx-7 lg:mx-43">
+        <div class="flex font-bold text-xl mb-15">
+            <a class="text-green-500" routerLink="/">Home / </a>
+            <p class="ml-2">Service Details</p>
+        </div>
+
+        <!-- details service section -->
+        <div class="block lg:flex">
+            <!-- services list -->
+            <div class="lg:w-[35%] w-full p-3 lg:pr-7">
+                <h3 class="text-xl mb-6 font-bold">Services List</h3>
+                @for (service of serviceList; track $index) {
+                <div class="flex items-center gap-2 mb-5">
+                    <i class="bi bi-arrow-right-circle text-accent"></i>
+                    <p class="p-2 first:bg-green-600">{{ service }}</p>
+                </div>
+                }
+                <h3 class="text-xl font-bold mb-5">Download Catalog</h3>
+                <div class="flex gap-3 mb-6">
+                    <i class="bi bi-filetype-pdf text-accent"></i>
+                    <p class="font-medium">Catalog PDF</p>
+                </div>
+                <div class="flex gap-3">
+                    <i class="bi bi-file-earmark-word text-accent"></i>
+                    <p class="font-medium">Catalog Word</p>
+                </div>
+
+                <div class="flex flex-col text-white bg-accent px-4 py-10 items-center mt-5 w-full">
+                    <i class="bi bi-headset help-icon text-5xl mb-2"></i>
+                    <h3>Have a Question?</h3>
+                    <div class="flex">
+                        <i class="bi bi-telephone me-2"></i>
+                        <p>+1 5589 55488 55</p>
+                    </div>
+                    <div class="flex">
+                        <i class="bi bi-envelope me-2"></i>
+                        <p>contact@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- service details -->
+            <div class="w-full lg:w-[65%]">
+                <img class="mb-6" src="https://bootstrapmade.com/content/demo/EstateAgency/assets/img/services.jpg" />
+                <h3 class="font-bold text-xl mb-2">Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
+                <p class="mb-3">Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque
+                    consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus
+                    vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.</p>
+
+                <div class="mb-2">
+                    <p><i class="bi bi-check-circle text-accent mr-3"></i>Aut eum totam accusantium voluptatem.</p>
+                    <p><i class="bi bi-check-circle text-accent mr-3"></i>Assumenda et porro nisi nihil nesciunt voluptatibus.</p>
+                    <p><i class="bi bi-check-circle text-accent mr-3"></i>Ullamco laboris nisi ut aliquip ex ea</p>
+                </div>
+
+                <p class="text-gray-600 mb-3">Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio
+                    iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.</p>
+                <div>
+                    Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae
+                    mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex
+                    repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel
+                    voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum
+                    at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia
+                    impedit dolore alias explicabo ea.
+                </div>
+            </div>
+        </div>
+    </div>

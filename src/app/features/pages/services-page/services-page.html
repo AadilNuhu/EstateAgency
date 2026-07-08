@@ -1,0 +1,26 @@
+<div class="mt-30 mb-15">
+    <div class="flex flex-col items-center mb-15">
+        <h1 class="text-[40px] font-bold">Services</h1>
+        <div class="px-7 w-full lg:w-180 text-center ">
+            Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a
+            odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.
+        </div>
+    </div>
+
+    <div class="mx-7 lg:mx-43">
+        <div class="flex font-bold text-xl mb-15">
+            <a class="text-green-500" routerLink="/">Home / </a>
+            <p class="ml-2">Services</p>
+        </div>
+
+        <!-- services -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            @for(service of services; track $index){
+            <a routerLink="/service" class="bg-white shadow-md rounded-md p-5 flex flex-col items-start border-accent hover:border-b-5 hover:border-green-500 transition-colors duration-300 ease-in-out gap-5">
+                <i class="{{service.icon}} text-4xl bg-green-500 px-3 py-3 rounded-full text-white"></i>
+                <h1 class="text-xl font-bold text-start">{{service.title}}</h1>
+                <p>{{service.description}}</p>
+            </a>
+            }
+    </div>
+</div>
