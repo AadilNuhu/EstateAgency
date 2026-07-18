@@ -17,10 +17,10 @@
             <!-- services list -->
             <div class="lg:w-[35%] w-full p-3 lg:pr-7">
                 <h3 class="text-xl mb-6 font-bold">Services List</h3>
-                @for (service of serviceList; track $index) {
-                <div class="flex items-center gap-2 mb-5">
+                @for (service of serviceList; track $index; let isFirst = $first) {
+                <div class="flex items-center gap-2 mb-5 p-1" [class.bg-green-600]="isFirst">
                     <i class="bi bi-arrow-right-circle text-accent"></i>
-                    <p class="p-2 first:bg-green-600">{{ service }}</p>
+                    <p class="p-2">{{ service }}</p>
                 </div>
                 }
                 <h3 class="text-xl font-bold mb-5">Download Catalog</h3>
@@ -33,7 +33,7 @@
                     <p class="font-medium">Catalog Word</p>
                 </div>
 
-                <div class="flex flex-col text-white bg-accent px-4 py-10 items-center mt-5 w-full">
+                <div class="flex flex-col text-white bg-accent px-4 py-10 items-center mt-5 w-[calc(100%+1.5rem)] -mx-3 lg:w-[calc(100%+1.75rem)] lg:-mr-7">
                     <i class="bi bi-headset help-icon text-5xl mb-2"></i>
                     <h3>Have a Question?</h3>
                     <div class="flex">

@@ -5,6 +5,8 @@ import { PropertiesPage } from './features/pages/properties-page/properties-page
 import { Property } from './features/pages/property/property';
 import { ServicesPage } from './features/pages/services-page/services-page';
 import { ServiceDetail } from './features/pages/service-detail/service-detail';
+import { Agents } from './features/pages/agents/agents';
+import { Contact } from './features/pages/contact/contact';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,4 +23,6 @@ export const routes: Routes = [
   { path: 'property/video', component: Property },
   { path: 'property/floor', component: Property },
   { path: 'property/location', component: Property },
+  { path: 'agents', component: Agents },
+  { path: 'contact', component: Contact },
 ];

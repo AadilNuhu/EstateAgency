@@ -1,0 +1,36 @@
+<section class="flex flex-col items-center my-20 px-4 md:px-20 w-full">
+    <div class=" mt-30 lg:w-180">
+        <h2 class="text-center font-bold text-3xl mb-4">Agents</h2>
+        <p class="text-center">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
+            consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit
+            quaerat ipsum dolorem.</p>
+    </div>
+
+    <div class="flex self-start font-bold text-xl mt-5 bg-gray-100 p-3 w-full mb-15">
+        <a routerLink="/" class="text-green-500">Home / </a>
+        <p class="ml-2">Agents</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-15">
+        @for(item of agents; track item.name){
+        <div class="bg-white rounded-2xl shadow-md transition-all duration-500 hover:-translate-y-1.25 relative">
+
+            <img [src]="item.imgUrl" alt="">
+            <div class="absolute -bottom-10 bg-white w-[80%] left-8.5 p-3">
+                <h4 class="text-[18px]  font-bold border-b border-gray-200 w-fit mb-2">{{item.name}}</h4>
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-default/80 italic ">{{item.role }}</p>
+                    <div class="flex space-x-1">
+                        <a routerLink=""><i class="bi bi-twitter-x text-sm text-gray-400"></i></a>
+                        <a routerLink=""><i class="bi bi-facebook text-sm text-gray-400"></i></a>
+                        <a routerLink=""><i class="bi bi-instagram text-sm text-gray-400"></i></a>
+                        <a routerLink=""><i class="bi bi-linkedin text-sm text-gray-400"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+
+    </div>
+</section>
