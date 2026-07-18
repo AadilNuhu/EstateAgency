@@ -1,14 +1,10 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
-import { NgClass } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
-import { Footer } from '../../../components/footer/footer';
-import { Navbar } from '../../../components/navbar/navbar';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Navbar, RouterLink, Footer, NgClass],
+  imports: [ RouterLink],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
