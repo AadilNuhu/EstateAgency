@@ -1,5 +1,7 @@
 # Estateagency
 
+> Built with a friend as a collaborative project, with Git and GitHub used to manage changes, share work, and learn the flow of teamwork in development.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
 
 ## Development server
